@@ -1,10 +1,4 @@
 <div class="App">
-    <form class="Input" (submit)="newQuestion()">
-        <input type="text"
-        name="question"
-               placeholder="¿Qué quieres saber?"
-               [(ngModel)]="currentQuestion">
-        <button type="submit">Dime!</button>
-    </form>
-   <app-output [responses]="responses"></app-output>
+    <app-input (onNewQuestion)="newQuestion($event)"></app-input>
+    <app-output [responses]="responses"></app-output>
 </div>

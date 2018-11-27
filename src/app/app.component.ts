@@ -28,23 +28,22 @@ export class AppComponent {
     { type: "negative", text: "Las perspectivas no son buenas" },
     { type: "negative", text: "Muy dudoso" }
   ];
-  currentQuestion = "";
   responses: Array<Response> = [
 
   ];
 
-  newQuestion() {
-     const currentQuestion = this.currentQuestion.trim();
+  newQuestion(question) {
+     const currentQuestion = question.trim();
+    console.log(currentQuestion, "padre");
 
      if(currentQuestion !== '') {
        const randomIndex = Math.floor(Math.random() * this.answers.length)
 
        const newAnswer: Response = {
-         question: this.currentQuestion,
+         question: currentQuestion,
          answer: this.answers[randomIndex]
        }
        this.responses.unshift(newAnswer)
-       this.currentQuestion = ''
      } else {
        console.error('pregunta que no preguntas')
      }
