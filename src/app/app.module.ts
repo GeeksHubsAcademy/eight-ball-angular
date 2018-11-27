@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
 
+import { LoggerService } from "./logger.service";
+
 @NgModule({
   declarations: [AppComponent, InputComponent, OutputComponent],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
