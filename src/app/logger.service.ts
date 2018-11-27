@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class LoggerService {
 
- log(msg: any) {
-   console.log(msg)
+ log(...msg: Array<any>) {
+   console.log( 'todos los logs:', ...msg)
  }
 
   error(msg: any) {

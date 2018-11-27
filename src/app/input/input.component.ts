@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from "@angular/core";
+import { LoggerService } from "../logger.service";
 
 @Component({
   selector: 'app-input',
@@ -7,9 +8,10 @@ import { Component, Output, EventEmitter } from "@angular/core";
 })
 export class InputComponent {
   @Output() onNewQuestion = new EventEmitter<string>()
+  constructor(private logger: LoggerService) {}
   currentQuestion = '';
   submit() {
-    console.log(this.currentQuestion)
+    this.logger.log(this.currentQuestion)
     this.onNewQuestion.emit(this.currentQuestion);
     this.currentQuestion = '';
 

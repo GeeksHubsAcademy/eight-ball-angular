@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { Response } from '../models/response';
+
+import {LoggerService } from './logger.service';
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -31,10 +33,11 @@ export class AppComponent {
   responses: Array<Response> = [
 
   ];
+  constructor(private logger: LoggerService) {}
 
   newQuestion(question) {
      const currentQuestion = question.trim();
-    console.log(currentQuestion, "padre");
+     this.logger.log(currentQuestion, "padre");
 
      if(currentQuestion !== '') {
        const randomIndex = Math.floor(Math.random() * this.answers.length)
@@ -45,7 +48,7 @@ export class AppComponent {
        }
        this.responses.unshift(newAnswer)
      } else {
-       console.error('pregunta que no preguntas')
+       this.logger.error('pregunta que no preguntas')
      }
   }
 }
