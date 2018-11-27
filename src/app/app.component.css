@@ -46,32 +46,5 @@
     background: #639
 }
 
-.Output .record {
-    padding: .3em;
-    margin: 0 20px .5em;
-    text-align: left;
-    font-size: .8em
-}
-
-.Output .last {
-    font-size: 1.4em;
-    background: hsla(0, 0%, 100%, .05)
-}
-
-.Output .question {
-    font-size: .6em
-}
-
-.Output .afirmative {
-    border-left: 3px solid green
-}
-
-.Output .doubt {
-    border-left: 3px solid orange
-}
-
-.Output .negative {
-    border-left: 3px solid red
-}
 
 /*# sourceMappingURL=main.6a1afec2.chunk.css.map */
