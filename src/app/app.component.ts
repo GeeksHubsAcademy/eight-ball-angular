@@ -30,25 +30,23 @@ export class AppComponent {
     { type: "negative", text: "Las perspectivas no son buenas" },
     { type: "negative", text: "Muy dudoso" }
   ];
-  responses: Array<Response> = [
-
-  ];
+  responses: Array<Response> = [];
   constructor(private logger: LoggerService) {}
-
   newQuestion(question) {
-     const currentQuestion = question.trim();
-     this.logger.log(currentQuestion, "padre");
+    const currentQuestion = question.trim();
 
-     if(currentQuestion !== '') {
-       const randomIndex = Math.floor(Math.random() * this.answers.length)
+    this.logger.log(currentQuestion, "padre");
 
-       const newAnswer: Response = {
-         question: currentQuestion,
-         answer: this.answers[randomIndex]
-       }
-       this.responses.unshift(newAnswer)
-     } else {
-       this.logger.error('pregunta que no preguntas')
-     }
+    if (currentQuestion !== "") {
+      const randomIndex = Math.floor(Math.random() * this.answers.length);
+
+      const newAnswer: Response = {
+        question: currentQuestion,
+        answer: this.answers[randomIndex]
+      };
+      this.responses.unshift(newAnswer);
+    } else {
+      this.logger.error("pregunta que no preguntas");
+    }
   }
 }
