@@ -6,9 +6,10 @@ import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
 
 import { LoggerService } from "./logger.service";
+import { EightBallComponent } from './eight-ball/eight-ball.component';
 
 @NgModule({
-  declarations: [AppComponent, InputComponent, OutputComponent],
+  declarations: [AppComponent, InputComponent, OutputComponent, EightBallComponent],
   imports: [BrowserModule, FormsModule],
   providers: [LoggerService],
   bootstrap: [AppComponent]

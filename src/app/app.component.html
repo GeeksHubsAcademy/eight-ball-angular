@@ -1,4 +1,5 @@
 <div class="App">
     <app-input (onNewQuestion)="newQuestion($event)"></app-input>
+    <app-eight-ball [data]="responses[0]"></app-eight-ball>
     <app-output [responses]="responses"></app-output>
 </div>
