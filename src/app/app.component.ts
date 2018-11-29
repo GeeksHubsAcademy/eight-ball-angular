@@ -30,7 +30,7 @@ export class AppComponent {
     { type: "negative", text: "Las perspectivas no son buenas" },
     { type: "negative", text: "Muy dudoso" }
   ];
-  responses: Array<Response> = [];
+  responses: Array<Response> = JSON.parse(localStorage.getItem("responses")) || [];
   constructor(private logger: LoggerService) {}
   newQuestion(question) {
     const currentQuestion = question.trim();
@@ -45,6 +45,7 @@ export class AppComponent {
         answer: this.answers[randomIndex]
       };
       this.responses.unshift(newAnswer);
+      localStorage.setItem("responses", JSON.stringify(this.responses));
     } else {
       this.logger.error("pregunta que no preguntas");
     }
