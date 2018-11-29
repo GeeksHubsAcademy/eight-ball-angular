@@ -14,7 +14,7 @@ Proyecto didáctico para aprender Angular
 
 ## Funcionalidad
 
-- La bola ocho responde tu preguntas.
+- La bola ocho responde tu preguntas cogiendo una respuesta random de un array de respuestas tipo 🤥.
 - Muestra el histórico de respuestas y las guarda en localStorage
 - La bola muestra la última respuesta
 
