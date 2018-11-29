@@ -3,6 +3,8 @@
     <input type="text"
            name="question"
            placeholder="¿Qué quieres saber?"
-           [(ngModel)]="currentQuestion">
+           [(ngModel)]="currentQuestion"
+           (input)="makeInitialInterrogation()"
+           (change)="makeLastInterrogation()">
     <button type="submit">Dime!</button>
 </form>

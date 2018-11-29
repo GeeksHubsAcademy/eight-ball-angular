@@ -2,20 +2,28 @@ import { Component, Output, EventEmitter } from "@angular/core";
 import { LoggerService } from "../logger.service";
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  selector: "app-input",
+  templateUrl: "./input.component.html",
+  styleUrls: ["./input.component.css"]
 })
 export class InputComponent {
-  @Output() onNewQuestion = new EventEmitter<string>()
+  @Output() onNewQuestion = new EventEmitter<string>();
   constructor(private logger: LoggerService) {}
-  currentQuestion = '';
+  currentQuestion = "";
   submit() {
-    this.logger.log(this.currentQuestion)
+    this.logger.log(this.currentQuestion);
     this.onNewQuestion.emit(this.currentQuestion);
-    this.currentQuestion = '';
-
-
+    this.currentQuestion = "";
   }
-
+  makeInitialInterrogation() {
+    if (this.currentQuestion !== "") {
+      this.currentQuestion =
+        "¿" + this.currentQuestion.replace("¿", "").replace("?", "");
+    }
+  }
+  makeLastInterrogation() {
+    if (this.currentQuestion !== "") {
+      this.currentQuestion = this.currentQuestion + "?";
+    }
+  }
 }
