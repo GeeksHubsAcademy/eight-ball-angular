@@ -1,6 +1,7 @@
 <div class="App">
-    <app-reloj></app-reloj>
-    <app-input (onNewQuestion)="newQuestion($event)"></app-input>
-    <app-eight-ball [data]="responses[0]"></app-eight-ball>
-    <app-output [responses]="responses"></app-output>
+    <header>
+      <h1>Super bola mágica</h1>
+    </header>
+    
+    <router-outlet></router-outlet>
 </div>

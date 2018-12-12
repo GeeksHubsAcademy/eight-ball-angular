@@ -1,0 +1,19 @@
+<p>
+    login works!
+</p>
+
+<div>
+    <a routerLink="/login"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}">LOGIN</a>
+
+</div>
+<div>
+    <a routerLink="/"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}">HOME</a>
+
+</div>
+<div>
+    <button (click)="goHome()">Go home</button>
+</div>
